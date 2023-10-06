@@ -2,7 +2,7 @@ const mongodb = require('mongodb');
 const db = require('../Utils/database');
 
 class Course {
-    constructor(id, title, description, language, domainId, ytUrl) {
+    constructor(id, title, description, language, domain, ytUrl) {
         this._id = id ? new mongodb.ObjectId(id) : null;
         this.title = title;
         this.description = description;
