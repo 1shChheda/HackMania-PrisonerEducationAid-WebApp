@@ -10,7 +10,11 @@ const db = require('./Utils/database');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
+
+// user routes
+const userRoutes = require('./Utils/allUserRoutes');
+userRoutes.allUserRoutes(app);
 
 // Connecting to the database...
 db.mongoConnect(() => {
