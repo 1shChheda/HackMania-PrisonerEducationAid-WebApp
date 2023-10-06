@@ -20,8 +20,8 @@ const userRoutes = require('./Utils/allUserRoutes');
 userRoutes.allUserRoutes(app);
 
 // admin routes
-const adminRoutes = require('./Utils/allAdminRoutes');
-adminRoutes.allAdminRoutes(app);
+const consultantRoutes = require('./Utils/allConsultantRoutes');
+consultantRoutes.allConsultantRoutes(app);
 
 // Connecting to the database...
 db.mongoConnect(() => {

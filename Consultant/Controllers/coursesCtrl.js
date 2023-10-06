@@ -12,9 +12,9 @@ exports.getAllCourses = (req, res, next) => {
 };
 
 exports.postCourse = (req, res, next) => {
-    const { title, description, language, domainId, ytUrl } = req.body;
+    const { title, description, language, domain, ytUrl } = req.body;
 
-    const course = new Models.Courses(null, title, description, language, domainId, ytUrl);
+    const course = new Models.Courses(null, title, description, language, domain, ytUrl);
     course.save()
         .then(result => {
             return res.status(201).json(course);
