@@ -6,4 +6,6 @@ const router = express.Router();
 
 router.get('/courses', courseCtrl.getAllCourses);
 
+router.get('/filter-courses', courseCtrl.filterCoursesByDomain);
+
 module.exports = router;

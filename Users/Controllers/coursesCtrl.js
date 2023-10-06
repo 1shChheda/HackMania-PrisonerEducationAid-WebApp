@@ -10,3 +10,13 @@ exports.getAllCourses = (req, res, next) => {
             return res.status(500).json({ error: 'Internal server error', error });
         });
 };
+
+exports.filterCoursesByDomain = (req, res, next) => {
+    Models.Courses.find({ domain: req.body.domain })
+        .then(courses => {
+            return res.status(200).json(courses);
+        })
+        .catch(error => {
+            return res.status(500).json({ error: 'Internal server error', error });
+        });
+};
