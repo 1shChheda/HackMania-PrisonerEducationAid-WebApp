@@ -26,7 +26,7 @@ class Course {
 
         return dbOps
             .then(result => {
-                // console.log(result);
+                console.log(result);
             })
             .catch(err => console.log(err))
     }
@@ -35,6 +35,17 @@ class Course {
         const database = db.getDb();
 
         return database.collection('courses').find().toArray()
+            .then(courses => {
+                return courses;
+            })
+            .catch(err => console.log(err))
+
+    }
+
+    static find(filter) {
+        const database = db.getDb();
+
+        return database.collection('courses').find(filter).toArray()
             .then(courses => {
                 return courses;
             })

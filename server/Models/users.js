@@ -2,11 +2,9 @@ const mongodb = require('mongodb');
 const db = require('../Utils/database');
 
 class User {
-    constructor(id, firstName, lastName, email, password, role) {
+    constructor(id, prisonId, password, role) {
         this._id = id ? new mongodb.ObjectId(id) : null;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        this.prisonId = prisonId;
         this.password = password;
         this.role = role;
     }
@@ -16,17 +14,17 @@ class User {
 
         let dbOps;
         if (this._id) {
-            // to update the course
+            // to update the User
             dbOps = database.collection('users').updateOne({ _id: this._id }, { $set: this })
 
         } else {
-            // to insert a new course
+            // to insert a new User
             dbOps = database.collection('users').insertOne(this)
         }
 
         return dbOps
             .then(result => {
-                // console.log(result);
+                console.log(result);
             })
             .catch(err => console.log(err))
     }
