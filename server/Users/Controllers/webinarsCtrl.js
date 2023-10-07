@@ -1,7 +1,14 @@
 const Models = require('../../Utils/allModels');
 
 exports.getAllWebinars = (req, res, next) => {
-    Models.Webinars.fetchAll
+    Models.Webinars.fetchAll()
+        .then(webinars => {
+            return res.status(200).json({ webinars });
+        })
+        .catch(err => {
+            console.error(err);
+            return res.status(500).json({ message: 'Failed to fetch webinars.' });
+        });
 };
 
 exports.postRegisterUser = (req, res, next) => {
