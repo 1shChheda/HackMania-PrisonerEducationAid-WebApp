@@ -36,6 +36,7 @@ const Services = () => {
                                 </div>
                             </div>
 
+                            <a href="https://www.youtube.com/podcasts" target='_blank'>
                             <div title='podcasts' onClick={() => handleCardClick('podcasts')} className="catalogue-card bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="catalogue-img-card m-2 text-justify text-sm">
                                     <img alt="card img" className="catalogue-img rounded-t group-hover:scale-[1.05] transition duration-1000 ease-in-out" src={img2} />
@@ -43,7 +44,9 @@ const Services = () => {
 
                                 </div>
                             </div>
+                            </a>
 
+                            <a href="https://psychcentral.com/blog" target='_blank'>
                             <div title='articles' onClick={() => handleCardClick('articles')} className="catalogue-card bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="catalogue-img-card m-2 text-justify text-sm">
                                     <img alt="card img" className="catalogue-img rounded-t group-hover:scale-[1.05] transition duration-1000 ease-in-out" src={img3} />
@@ -51,6 +54,7 @@ const Services = () => {
 
                                 </div>
                             </div>
+                            </a>
 
                             <div title='jobs' onClick={() => handleCardClick('jobs')} className="catalogue-card bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="catalogue-img-card m-2 text-justify text-sm">
@@ -60,6 +64,7 @@ const Services = () => {
                                 </div>
                             </div>
 
+                            <a href="https://forms.gle/Q3NnhJGPZvo5mYnt9" target='_blank'>
                             <div title='quiz' onClick={() => handleCardClick('quiz')} className="catalogue-card bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="catalogue-img-card m-2 text-justify text-sm">
                                     <img alt="card img" className="catalogue-img rounded-t group-hover:scale-[1.05] transition duration-1000 ease-in-out" src={img5} />
@@ -67,7 +72,9 @@ const Services = () => {
 
                                 </div>
                             </div>
+                            </a>
 
+                            <a href="/get-demo">
                             <div title='webinar' onClick={() => handleCardClick('webinar')} className="catalogue-card bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="catalogue-img-card m-2 text-justify text-sm">
                                     <img alt="card img" className="catalogue-img rounded-t group-hover:scale-[1.05] transition duration-1000 ease-in-out" src={img6} />
@@ -75,6 +82,7 @@ const Services = () => {
 
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </section>
