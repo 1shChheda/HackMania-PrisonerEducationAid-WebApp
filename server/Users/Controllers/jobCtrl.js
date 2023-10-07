@@ -37,10 +37,6 @@ exports.applyForJob = (req, res) => {
         Models.Jobs.findById(jobId)
             .then(job => {
                 if (job) {
-                    // to add the user's ID to the eligibleUserIds array
-                    Models.Jobs.eligibleUserIds.push(userId); // Access static property directly
-
-                    // Update job in the database
                     return job.save();
                 } else {
                     throw new Error('Job not found');
