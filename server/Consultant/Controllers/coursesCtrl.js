@@ -3,7 +3,7 @@ const Models = require('../../Utils/allModels');
 exports.getAllCourses = (req, res, next) => {
     Models.Courses.fetchAll()
         .then(courses => {
-            console.log(courses);
+            // console.log(courses);
             return res.status(200).json(courses);
         })
         .catch(error => {
