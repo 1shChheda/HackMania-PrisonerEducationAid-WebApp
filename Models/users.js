@@ -2,44 +2,39 @@ const mongodb = require('mongodb');
 const db = require('../Utils/database');
 
 class User {
-    constructor(id, name, password) {
+    constructor(id, prisonId, password, role) {
         this._id = id ? new mongodb.ObjectId(id) : null;
-        this.name = name;
+        this.prisonId = prisonId;
         this.password = password;
+        this.role = role;
     }
 
     save() {
         const database = db.getDb();
 
+        let dbOps;
         if (this._id) {
-            return database.collection('users').updateOne({ _id: this._id }, { $set: this });
+            // to update the User
+            dbOps = database.collection('users').updateOne({ _id: this._id }, { $set: this })
+
         } else {
-            return database.collection('users').insertOne(this)
-                .then(result => {
-                    console.log(result);
-                })
-                .catch(err => console.log(err))
+            // to insert a new User
+            dbOps = database.collection('users').insertOne(this)
         }
-    }
 
-    static findOne(filter) {
-        const database = db.getDb();
-
-        return database.collection('users').findOne(filter)
-            .then(user => {
-                return user;
-            })
-            .catch(err => console.log(err));
-    }
-
-    static findById(userId) {
-        const database = db.getDb();
-
-        return database.collection('users').find({ _id: new mongodb.ObjectId(userId) }).toArray()
-            .then(users => {
-                return users[0]
+        return dbOps
+            .then(result => {
+                console.log(result);
             })
             .catch(err => console.log(err))
+    }
+
+    async login(prisonId) {
+        const database = db.getDb();
+
+        let dbOps = await database.collection('users').findOne({ prisonId });
+
+        return dbOps;
     }
 }
 
