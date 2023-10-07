@@ -7,7 +7,7 @@ import { useDocTitle } from '../components/CustomHook';
 import Notiflix from 'notiflix';
 
 const Room = () => {
-    useDocTitle('E-Learn')
+    useDocTitle('E-Learn with Shiksha')
     return (
 
         <div className='whereby' >

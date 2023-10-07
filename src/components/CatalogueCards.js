@@ -12,17 +12,17 @@ const Services = () => {
     const handleCardClick = (id) => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: 'smooth' });
         }
-      };
+    };
 
     return (
         <div>
             <div id="catalogue" className="bg-gray-100 pt-16" >
                 <section data-aos="zoom-in-down">
                     <div className="my-4 py-4">
-                        <h2 className="my-2 text-center text-3xl text-black-900 uppercase font-bold">Catalogue</h2>
-                        <h2 className="mt-4 mx-12 text-center text-xl lg:text-2xl font-semibold text-blue-900">We are deeply committed to the growth and improvement.</h2>
+                        <h2 className="my-2 text-center text-3xl text-blue-900 uppercase font-bold">Catalog</h2>
+                        <h2 className="mt-4 mx-12 text-center text-xl lg:text-2xl font-semibold text-black-900">We are deeply committed to the growth and improvement.</h2>
                     </div>
 
                     <div className="px-12" data-aos="fade-down" data-aos-delay="600">

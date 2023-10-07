@@ -33,7 +33,7 @@ function App() {
     });
   }, []);
 
-  useDocTitle("MLD | Molad e Konsult - Bespoke Web and Mobile Applications");
+  useDocTitle("E-Learn with Shiksha");
 
   return (
     <>
