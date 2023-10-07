@@ -20,3 +20,13 @@ exports.filterCoursesByDomain = (req, res, next) => {
             return res.status(500).json({ error: 'Internal server error', error });
         });
 };
+
+exports.filterCoursesByLanguage = (req, res, next) => {
+    Models.Courses.find({ language: req.body.language })
+        .then(courses => {
+            return res.status(200).json(courses);
+        })
+        .catch(error => {
+            return res.status(500).json({ error: 'Internal server error', error });
+        });
+};
