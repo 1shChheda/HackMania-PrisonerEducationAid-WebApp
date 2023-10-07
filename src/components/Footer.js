@@ -14,11 +14,10 @@ const Footer = () => {
                         {/* 1st block */}
                         <div className="col-span-12 lg:col-span-4">
                             <div className="box-border border-b-4 border-blue-900 p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
-                                <h3 className="font-bold text-4xl mb-4">ORINOVA</h3>
+                                <h3 className="font-bold text-4xl mb-4">E-LEARN </h3>
                                 <div className='text-md font-medium text-gray-600'>
-                                    <h5>Orinova</h5>
-                                    <p>xyz</p>
-                                    <p>zyx</p>
+                                    <h4>Prisoner Aid Programs</h4>
+
                                     <p>India</p>
                                 </div>
                             </div>
@@ -42,19 +41,19 @@ const Footer = () => {
 
                         {/* 3rd block */}
                         <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto">
-                            <h6 className="text-[#013289] text-xl font-bold mb-4">OUR SERVICES</h6>
+                            <h6 className="text-[#013289] text-xl font-bold mb-4">Explore</h6>
                             <ul className="text-md">
                                 <li className="mb-2">
-                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Web Development</Link>
+                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Courses</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Mobile App Development</Link>
+                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Blogs</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Domain and Hosting</Link>
+                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Jobs</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">General IT Consultations</Link>
+                                    <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Quizzes</Link>
                                 </li>
                             </ul>
                         </div>
