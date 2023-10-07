@@ -22,6 +22,8 @@ exports.login = async (req, res) => {
         });
         delete user.password;
 
+        res.header('x-auth-token', token);
+
         return res.status(200).json({ user, token, role: user.role });
     } catch (error) {
         console.log(error.message)
