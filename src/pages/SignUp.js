@@ -1,23 +1,41 @@
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-
 import NavBar from "../components/Navbar/NavBar";
+import { register } from "../api";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
+export default function SignUp() {
+  const navigate = useNavigate();
+  const user = useSelector(state => state.auth.user);
+
+  useEffect(() => {
+    if(user) {
+      if (user.role === "user") navigate("/catalogue");
+      else if (user.role === "admin") navigate("/catalogue");
+    }
+  }, [navigate, user]);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const formData = new FormData(event.currentTarget);
+    const formProps = Object.fromEntries(formData);
+    console.log(formProps)
+
+    try {
+      await register(formProps);
+      navigate("/sign-in");
+    } catch (error) {
+      console.log(error.message)
+    }
   };
 
   return (
@@ -38,9 +56,28 @@ export default function SignIn() {
             }}
           >
             <Typography component="h1" variant="h5">
-              Sign in
+              Sign Up
             </Typography>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                id="firstName"
+                label="First Name"
+                name="firstName"
+                autoComplete="firstName"
+                autoFocus
+                sx={{ mr: 5 }}
+              />
+              <TextField
+                margin="normal"
+                required
+                id="lasttName"
+                label="Last Name"
+                name="lasttName"
+                autoComplete="lasttName"
+                autoFocus
+              />
               <TextField
                 margin="normal"
                 required
@@ -61,27 +98,23 @@ export default function SignIn() {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Sign Up
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  {/* <Link href="#" variant="body2">
                     Forgot password?
-                  </Link>
+                  </Link> */}
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  <Link href="/sign-in" variant="body2">
+                    {"Already have an account? Sign In"}
                   </Link>
                 </Grid>
               </Grid>

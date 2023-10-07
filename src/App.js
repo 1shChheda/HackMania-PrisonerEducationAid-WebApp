@@ -11,10 +11,11 @@ import {
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import DemoProduct from './pages/DemoProduct';
-import Login from './pages/Login'
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 import Catalogue from './pages/Catalogue'
 
-import {useDocTitle} from './components/CustomHook';
+import { useDocTitle } from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -40,10 +41,11 @@ function App() {
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/sign-up" element={<SignUp />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/get-demo" element={<DemoProduct />} /> 
-            <Route path="/login" element={<Login />} /> 
-            <Route path="/catalogue" element={<Catalogue />} /> 
+            <Route path="/get-demo" element={<DemoProduct />} />
+            <Route path="/catalogue" element={<Catalogue />} />
           </Routes>
         </ScrollToTop>
       </Router>
