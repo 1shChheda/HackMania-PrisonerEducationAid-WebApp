@@ -9,6 +9,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.catalogue-img {
+  height: 25vh;
+}
+
 .hero {
   background: url(./images/hero-bg.svg) top center no-repeat;
   background-size: cover;
@@ -28,6 +32,31 @@ body {
   width: 100vw;
   background-image: url('./images/hero-bg.svg');
   background-size: cover;
+}
+
+.catalogue-card {
+  height: 36vh;
+}
+
+.catalogue-img-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.video:last-child:nth-child(3n - 2) {
+  grid-column-end: 5;
+}
+
+#catalogue {
+  height: auto;
 }
 
 
